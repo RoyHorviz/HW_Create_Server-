@@ -3,85 +3,128 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Book Component</title>
+    <title>Book Cover</title>
     <style>
+      /* Reset styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
       body {
         font-family: Arial, sans-serif;
-        background-color: #f9f9f9;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #f4f4f4;
+      }
+
+      .content {
+        flex: 1;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
-        margin: 0;
+        flex-direction: column;
       }
 
-      .book-container {
-        background-color: #e3f2fd;
-        border: 1px solid #90caf9;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        width: 350px;
-        text-align: center;
-      }
-
-      .book-title {
-        font-size: 1.8em;
-        font-weight: bold;
-        color: #1e88e5;
-        margin-bottom: 15px;
-      }
-
-      .book-image {
-        background-color: #ffffff;
-        border: 1px solid #cccccc;
-        height: 100px;
-        width: 100%;
+      .book-cover {
+        width: 420px;
+        height: 640px;
+        border: 1px solid #ccc;
+        background-color: #fff;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.2em;
-        font-weight: bold;
-        color: #0d47a1;
-        margin: 15px 0;
+        flex-direction: column;
+        position: relative;
       }
 
-      .book-js {
-        background-color: #ffeb3b;
+      .book-header {
+        padding: 10px;
+        text-align: left;
+        font-size: 12px;
+        line-height: 1.4;
+        color: #666;
+      }
+
+      .book-header span {
+        font-weight: bold;
         color: #000;
-        font-size: 3em; /* הגדלת הטקסט */
-        font-weight: bold;
-        padding: 15px 0;
-        margin: 20px 0;
       }
 
       .book-author {
-        font-size: 1.2em;
-        color: #546e7a;
-        margin-top: 10px;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        margin: 10px 0;
+        color: #000;
       }
 
-      .book-description {
-        font-size: 1em;
-        color: #455a64;
-        margin-top: 10px;
+      .book-title {
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+        margin: 10px 0;
+        color: #333;
+        letter-spacing: 1px;
+      }
+
+      .yellow-section {
+        flex-grow: 1;
+        background-color: #ffeb3b;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .js-text {
+        font-size: 150px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .you-dont-know {
+        position: absolute;
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+        transform: rotate(-90deg);
+        top: 50%;
+        left: 20px;
+        transform-origin: left center;
       }
 
       .footer {
-        font-size: 0.9em;
-        color: #78909c;
-        margin-top: 20px;
+        background-color: #333;
+        color: #fff;
+        padding: 50px 0;
+        text-align: center;
+        font-size: 25px;
       }
     </style>
   </head>
   <body>
-    <div class="book-container">
-      <div class="book-title">Book Component By Function</div>
-      <div class="book-image">Scope & Closures</div>
-      <div class="book-js">JS</div>
-      <div class="book-author">By Kyle Simpson</div>
-      <div class="book-description">The JS part most people don't use</div>
-      <div class="footer">© 2021 roy Horviz && nikita Sigalov</div>
+    <div class="content">
+      <div class="book-cover">
+        <div class="book-header">
+          <span>O'REILLY</span><br />
+          Kyle's way of critically thinking about every tiny bit of the language
+          will creep into your mindset and general workflow -
+          <strong>SHANE HUDSON</strong>
+        </div>
+        <div class="book-author">KYLE SIMPSON</div>
+        <div class="book-title">SCOPE & CLOSURES</div>
+        <div class="yellow-section">
+          <div class="you-dont-know">YOU DON'T KNOW</div>
+          <div class="js-text">JS</div>
+        </div>
+      </div>
     </div>
+    <div class="footer">© 2021 Roy Horviz Nikita Sigalov</div>
   </body>
 </html>
